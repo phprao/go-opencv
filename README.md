@@ -1,2 +1,0 @@
-# go-opencv
-go-opencv
