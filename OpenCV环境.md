@@ -17,6 +17,8 @@ https://opencv.org/releases/
 
 https://docs.opencv.org/4.7.0/  当前稳定版本 4.7.0
 
+opencv论坛 https://forum.opencv.org/
+
 
 ##### 2、安装GoCV
 
