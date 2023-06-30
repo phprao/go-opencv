@@ -30,7 +30,7 @@ opencv论坛 https://forum.opencv.org/
 
 下载包 `go get -u -d gocv.io/x/gocv`
 
-进入到`GOPATH`目录下找到`gocv`，执行`win_build_opencv.cmd`来下载安装`opencv`，默认安装到了`C:\opencv`。
+进入到`GOPATH`目录下找到`gocv`，使用PowerShell（不能是普通的cmd窗口）执行`win_build_opencv.cmd`来下载安装`opencv`，默认安装到了`C:\opencv`。
 
 需要一些时间。
 
@@ -42,6 +42,11 @@ opencv论坛 https://forum.opencv.org/
 gocv version: 0.33.0
 opencv lib version: 4.7.0
 ```
+
+注意，opencv的功能是大量依赖于你本地环境的，在安装opencv的时候会开到大量的`not found`，然后它就将对应的功能设置为`off`，于是你在使用的时候就会报错，如果的确需要某功能，需要先装上对应的依赖，然后重新编译即可。
+
+在安装的时候，有的系统会报错`D:\Program`不是一个可运行程序，那是因为MinGW被安装在了`D:\Program Files`目录下，在命令行模式下，这个空格被解析为前面是程序，后面是参数，因此报错，我的解决方式是修改`win_build_opencv.cmd`文件，拉到后面，将`mingw32-make`写成了绝对路径，并加上了双引号，如下：`D:\"Program Files"\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\mingw32-make`。或者重装`MinGW`。
+
 
 学习文档：
 https://blog.csdn.net/qq_15698613/category_9292368.html

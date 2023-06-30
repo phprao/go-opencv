@@ -402,10 +402,10 @@ func ShowMultipleImage(title string, imgs []gocv.Mat, imgCols int) {
 opencv中无法读取gif图像，这是由于license原因。转而使用 videocapture 或者第三方的 PIL 库（Python），但是其实Golang的基础库`image`中就有读取gif图像的。于是一个简单的示例如下
 
 ```go
-func Run8() {
-	w := gocv.NewWindow("show video")
+func ReadAndShowGIF(filename string) {
+	w := gocv.NewWindow(filename)
 
-	f, _ := os.Open("showimage/image15.gif")
+	f, _ := os.Open(filename)
 	defer f.Close()
 
 	gi, _ := gif.DecodeAll(f)
@@ -432,7 +432,36 @@ func Run8() {
 
 打开opencv编译安装的路径下`C:\opencv\build\lib`，的确没找到这两依赖，那怎么办呢？
 
-opencv在编译的时候会首先查找当前系统有没有安装ffmpeg，如果没有安装才会去下载安装，但是可能是在下载的时候失败了，所以就没有安装这个依赖，因此，我们可以先手动自己安装ffmpeg，然后重新编译opencv。
+opencv在编译的时候会首先查找当前系统有没有安装ffmpeg，如果没有安装才会去下载安装，但是可能是在下载的时候失败了，所以就没有安装这个依赖，下载失败的日志可以在`opencv/build/CMakeDownloadLog.txt`找到，因此，我们打开梯子软件，然后重新编译opencv。
+
+读取视频文件使用`gocv.VideoCaptureFile(filename)`或者`gocv.OpenVideoCapture(filename)`，然后逐帧处理
+
+```go
+func ReadAndShowVideo(filename string) {
+	w := gocv.NewWindow(filename)
+	vc, err := gocv.VideoCaptureFile(filename)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	mat := gocv.NewMat()
+
+	for {
+		if vc.Read(&mat) {
+			w.IMShow(mat)
+			w.WaitKey(10)
+		} else {
+			break
+		}
+	}
+	w.WaitKey(0)
+}
+```
+
+其实也可以使用`ReadAndShowVideo`函数来读取GIF图像，但是不如`ReadAndShowGIF`控制的更细致。
+
+
 
 https://github.com/BtbN/FFmpeg-Builds/releases
 

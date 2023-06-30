@@ -3,6 +3,9 @@ package util
 import (
 	"fmt"
 	"image"
+	"image/gif"
+	"log"
+	"os"
 
 	"gocv.io/x/gocv"
 )
@@ -63,10 +66,9 @@ func ReadAndShowImage(w *gocv.Window, filename string) gocv.Mat {
 	return img
 }
 
-func ReadAndShowVideo(w *gocv.Window, v interface{}) {
-	// gif, err := gocv.VideoCaptureFile("showimage/image15.gif")
-	// gif, err := gocv.OpenVideoCapture("showimage/image15.gif")
-	vc, err := gocv.OpenVideoCapture(v)
+func ReadAndShowVideo(filename string) {
+	w := gocv.NewWindow(filename)
+	vc, err := gocv.VideoCaptureFile(filename)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -77,10 +79,31 @@ func ReadAndShowVideo(w *gocv.Window, v interface{}) {
 	for {
 		if vc.Read(&mat) {
 			w.IMShow(mat)
-			w.WaitKey(1000)
+			w.WaitKey(10)
 		} else {
 			break
 		}
 	}
+	w.WaitKey(0)
+}
 
+func ReadAndShowGIF(filename string) {
+	w := gocv.NewWindow(filename)
+
+	f, _ := os.Open(filename)
+	defer f.Close()
+
+	gi, _ := gif.DecodeAll(f)
+
+	for k, v := range gi.Image {
+		img, err := gocv.ImageToMatRGB(v)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		w.IMShow(img)
+		w.WaitKey(gi.Delay[k] * 10) // delay 单位是百分之一秒，waitkey参数为毫秒
+	}
+
+	w.WaitKey(0)
 }

@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	showimage.Run8()
+	showimage.Run2()
 }

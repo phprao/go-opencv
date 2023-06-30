@@ -3,9 +3,7 @@ package showimage
 import (
 	"fmt"
 	"image"
-	"image/gif"
 	"log"
-	"os"
 
 	"github.com/phprao/go-opencv/util"
 	"gocv.io/x/gocv"
@@ -17,13 +15,6 @@ func Run() {
 	util.ReadAndShowImage(w, "showimage/cat.jpg")
 
 	log.Println(w.WaitKey(10000))
-}
-
-// ???????????????
-func Run2() {
-	w := gocv.NewWindow("show video")
-	w.MoveWindow(400, 300)
-	util.ReadAndShowVideo(w, "showimage/video1.mp4")
 }
 
 // 图像腐蚀与膨胀
@@ -136,25 +127,14 @@ func Run7() {
 	fmt.Println(m1.Step()) // 30，返回每一行占用的字节数
 }
 
+// 读物GIF动图
 func Run8() {
-	w := gocv.NewWindow("show video")
+	util.ReadAndShowGIF("showimage/image15.gif")
+}
 
-	f, _ := os.Open("showimage/image15.gif")
-	defer f.Close()
-
-	gi, _ := gif.DecodeAll(f)
-
-	for k, v := range gi.Image {
-		img, err := gocv.ImageToMatRGB(v)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		w.IMShow(img)
-		w.WaitKey(gi.Delay[k] * 10) // delay 单位是百分之一秒，waitkey参数为毫秒
-	}
-
-	w.WaitKey(0)
+// 读取视频文件
+func Run2() {
+	util.ReadAndShowVideo("showimage/video1.mp4")
 }
 
 /*
