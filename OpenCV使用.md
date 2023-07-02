@@ -432,7 +432,7 @@ func ReadAndShowGIF(filename string) {
 
 打开opencv编译安装的路径下`C:\opencv\build\lib`，的确没找到这两依赖，那怎么办呢？
 
-opencv在编译的时候会首先查找当前系统有没有安装ffmpeg，如果没有安装才会去下载安装，但是可能是在下载的时候失败了，所以就没有安装这个依赖，下载失败的日志可以在`opencv/build/CMakeDownloadLog.txt`找到，因此，我们打开梯子软件，然后重新编译opencv。
+opencv在编译的时候会首先查找当前系统有没有安装ffmpeg，如果没有安装才会去下载安装，但是可能是在下载的时候失败了，所以就没有安装这个依赖，下载失败的日志可以在`opencv/build/CMakeDownloadLog.txt`找到，因此，我打开了梯子软件来重新编译opencv就可以了，不用梯子的话我还没试过怎么解决。
 
 读取视频文件使用`gocv.VideoCaptureFile(filename)`或者`gocv.OpenVideoCapture(filename)`，然后逐帧处理
 

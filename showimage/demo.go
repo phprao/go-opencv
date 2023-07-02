@@ -137,8 +137,50 @@ func Run2() {
 	util.ReadAndShowVideo("showimage/video1.mp4")
 }
 
-/*
+// 读取网络图片
+func Run9() {
+	util.ReadAndShowImageFromUrl("https://videoactivity.bookan.com.cn/ac_1_1687763619_793.jpg")
+}
 
-ROI 拾取框
+// 图片裁剪，使用鼠标选择感兴趣的区域
+func Run10() {
+	w := gocv.NewWindow("image")
+	srcImage := gocv.IMRead("showimage/cat.jpg", gocv.IMReadColor)
+	rect := w.SelectROI(srcImage)
+	subImage := srcImage.Region(rect)
+	w.IMShow(subImage)
+	w.WaitKey(0)
+}
 
-*/
+// 拆分通道
+func Run11() {
+	srcImage := gocv.IMRead("showimage/cat.jpg", gocv.IMReadColor)
+
+	imgs := gocv.Split(srcImage) // B G R
+	// imgSize := srcImage.Size()
+
+	util.ShowImage("mat split", imgs[1], true)
+
+	// fmt.Println(imgs[0].Size(), imgs[0].Channels(), imgs[0].Total())
+	util.ShowMultipleImage("mat split", []gocv.Mat{imgs[0], imgs[1], imgs[2]}, 2)
+
+	// befor := make([]uint8, srcImage.Total())
+
+	// bm, _ := imgs[0].DataPtrUint8()
+	// gm, _ := imgs[1].DataPtrUint8()
+	// rm, _ := imgs[2].DataPtrUint8()
+
+	// bm = append(append(bm, befor...), befor...)
+	// gm = append(append(befor, gm...), befor...)
+	// rm = append(append(befor, befor...), rm...)
+
+	// b, _ := gocv.NewMatWithSizesFromBytes(imgSize, srcImage.Type(), bm)
+	// g, _ := gocv.NewMatWithSizesFromBytes(imgSize, srcImage.Type(), gm)
+	// r, _ := gocv.NewMatWithSizesFromBytes(imgSize, srcImage.Type(), rm)
+
+	// fmt.Println(b.Size(), b.Channels(), b.Total())
+	// fmt.Println(g.Size(), g.Channels(), g.Total())
+	// fmt.Println(r.Size(), r.Channels(), r.Total())
+
+	// util.ShowMultipleImage("mat split", []gocv.Mat{b, g, r}, 2)
+}

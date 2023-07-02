@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"image"
 	"image/gif"
+	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 
 	"gocv.io/x/gocv"
@@ -105,5 +107,24 @@ func ReadAndShowGIF(filename string) {
 		w.WaitKey(gi.Delay[k] * 10) // delay 单位是百分之一秒，waitkey参数为毫秒
 	}
 
+	w.WaitKey(0)
+}
+
+func ReadAndShowImageFromUrl(url string) {
+	resp, err := http.Get(url)
+	if err != nil {
+		return
+	}
+	by, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return
+	}
+
+	m, err := gocv.IMDecode(by, gocv.IMReadColor)
+	if err != nil {
+		return
+	}
+	w := gocv.NewWindow("url image")
+	w.IMShow(m)
 	w.WaitKey(0)
 }

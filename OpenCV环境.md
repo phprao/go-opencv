@@ -45,7 +45,7 @@ opencv lib version: 4.7.0
 
 注意，opencv的功能是大量依赖于你本地环境的，在安装opencv的时候会开到大量的`not found`，然后它就将对应的功能设置为`off`，于是你在使用的时候就会报错，如果的确需要某功能，需要先装上对应的依赖，然后重新编译即可。
 
-在安装的时候，有的系统会报错`D:\Program`不是一个可运行程序，那是因为MinGW被安装在了`D:\Program Files`目录下，在命令行模式下，这个空格被解析为前面是程序，后面是参数，因此报错，我的解决方式是修改`win_build_opencv.cmd`文件，拉到后面，将`mingw32-make`写成了绝对路径，并加上了双引号，如下：`D:\"Program Files"\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\mingw32-make`。或者重装`MinGW`。
+在安装的时候，有的系统会报错`D:\Program`不是一个可运行程序，那是因为MinGW被安装在了`D:\Program Files`目录下，在命令行模式下，这个空格被解析为前面是程序，后面是参数，因此报错，我修改了`win_build_opencv.cmd`文件，将`mingw32-make`写成了绝对路径，并加上了双引号，如下：`D:\"Program Files"\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\mingw32-make`，但是架不住还有隐藏的调用也报这个错，然后我的CMake是安装在`C:\Program Files`下面，这居然不报错，于是我就简单的将`D:\Program Files\mingw-w64` 移到了 `C:\Program Files\mingw-w64`，然后环境变量也跟着改了一下，居然就可以了。
 
 
 学习文档：
