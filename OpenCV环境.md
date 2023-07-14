@@ -52,6 +52,21 @@ opencv lib version: 4.7.0
 https://blog.csdn.net/qq_15698613/category_9292368.html
 https://github.com/hybridgroup/gocv/cmd
 
+Go数学库：gonum
+对应的仓库 github.com/gonum/gonum
+安装 go get -u gonum.org/v1/gonum/...
+import "gonum.org/v1/gonum"
+文档 godoc -http=:6060
+
+第三方绘图库 plot
+go get -u gonum.org/v1/plot/...
+gonum/plot 示例  https://github.com/gonum/plot/wiki/Example-plots
+
+第三方绘图库 go-echarts 好用
+go get -u github.com/go-echarts/go-echarts/...
+go get -u github.com/go-echarts/go-echarts/v2/...
+import "github.com/go-echarts/go-echarts/v2/charts"
+
 
 #### OpenCV概述
 

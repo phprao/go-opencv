@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/phprao/go-opencv/showimage"
+	"github.com/phprao/go-opencv/licenceplaterecognition"
 )
 
 func main() {
-	showimage.Run11()
+	licenceplaterecognition.Run()
 }
