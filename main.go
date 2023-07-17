@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/phprao/go-opencv/licenceplaterecognition"
+	"github.com/phprao/go-opencv/qrcoderecognition"
 )
 
 func main() {
-	licenceplaterecognition.Run()
+	qrcoderecognition.Run()
 }
