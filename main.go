@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	qrcoderecognition.Run()
+	qrcoderecognition.Run2()
 }
