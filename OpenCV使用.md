@@ -241,7 +241,7 @@ threshold	(	InputArray 	src,
 
 `type`阈值化规则，可选值如下。
 
-![image-20230627163547295](D:\dev\php\magook\trunk\server\md\img\image-20230627163547295.png)
+![image-20230627163547295](./imgs/image-20230627163547295.png)
 
 `THRESH_BINARY`：二进制阈值，新的阈值产生规则可为：`value > thresh ? maxval : 0`
 
@@ -269,7 +269,7 @@ func Run6() {
 }
 ```
 
-![image-20230627165935558](D:\dev\php\magook\trunk\server\md\img\image-20230627165935558.png)
+![image-20230627165935558](./imgs/image-20230627165935558.png)
 
 自适应阈值的二值化，可以通过比较像素点与周围像素点的关系动态调整阈值。`gocv.AdaptiveThreshold()`
 
@@ -295,7 +295,7 @@ func Run3() {
 }
 ```
 
-![image-20230627170654181](D:\dev\php\magook\trunk\server\md\img\image-20230627170654181.png)
+![image-20230627170654181](./imgs/image-20230627170654181.png)
 
 腐蚀的作用就是让暗的区域变大（它是在一个区域内找0），而膨胀的作用就是让亮的区域变大（它是在一个区域内找255）。而最终的结果很大程度上取决于“核”的形状和大小，“核”的形状有方形、X形、椭圆形。
 
@@ -337,7 +337,7 @@ func Run4() {
 }
 ```
 
-![image-20230627154904325](D:\dev\php\magook\trunk\server\md\img\image-20230627154904325.png)
+![image-20230627154904325](./imgs/image-20230627154904325.png)
 
 典型的卷积核：
 
@@ -517,7 +517,7 @@ func ShowMultipleImage(title string, imgs []gocv.Mat, imgCols int) {
 }
 ```
 
-![image-20230629151923803](D:\dev\php\magook\trunk\server\md\img\image-20230629151923803.png)
+![image-20230629151923803](./imgs/image-20230629151923803.png)
 
 ##### 读取GIF图像
 
@@ -632,7 +632,7 @@ func Run12() {
 }
 ```
 
-![image-20230703095528799](D:\dev\php\magook\trunk\server\md\img\image-20230703095528799.png)
+![image-20230703095528799](./imgs/image-20230703095528799.png)
 
 代码有些长，实际上gocv提供了对 Mat 的 Merge 操作，如下
 
@@ -673,7 +673,7 @@ func Run14() {
 
 
 
-![image-20230703102013679](D:\dev\php\magook\trunk\server\md\img\image-20230703102013679.png)
+![image-20230703102013679](./imgs/image-20230703102013679.png)
 
 ##### 图像拼接
 
@@ -725,7 +725,7 @@ func Run17() {
 }
 ```
 
-![image-20230703154750376](D:\dev\php\magook\trunk\server\md\img\image-20230703154750376.png)
+![image-20230703154750376](./imgs/image-20230703154750376.png)
 
 ##### 蒙版操作mask
 
@@ -752,7 +752,7 @@ func Run18() {
 }
 ```
 
-![image-20230703164414323](D:\dev\php\magook\trunk\server\md\img\image-20230703164414323.png)
+![image-20230703164414323](./imgs/image-20230703164414323.png)
 
 示例2：把 jpg 中的图标扣出来粘贴到另一张图片上，此logo图片不是png的，而是白底的。
 
@@ -795,9 +795,9 @@ func Run19() {
 }
 ```
 
-![image-20230704100030789](D:\dev\php\magook\trunk\server\md\img\image-20230704100030789.png)
+![image-20230704100030789](./imgs/image-20230704100030789.png)
 
-![image-20230704100050462](D:\dev\php\magook\trunk\server\md\img\image-20230704100050462.png)
+![image-20230704100050462](./imgs/image-20230704100050462.png)
 
 ##### 图像的位运算
 
@@ -917,7 +917,7 @@ func WriteTextOnImage(img image.Image, text string, textPos image.Point, fontFil
 }
 ```
 
-![image-20230704151447701](D:\dev\php\magook\trunk\server\md\img\image-20230704151447701.png)
+![image-20230704151447701](./imgs/image-20230704151447701.png)
 
 
 
@@ -955,7 +955,7 @@ func RUn21() {
 }
 ```
 
-![image-20230705154645759](D:\dev\php\magook\trunk\server\md\img\image-20230705154645759.png)
+![image-20230705154645759](./imgs/image-20230705154645759.png)
 
 ##### 图像的缩放
 
@@ -982,7 +982,7 @@ func Run22() {
 }
 ```
 
-![image-20230705154617335](D:\dev\php\magook\trunk\server\md\img\image-20230705154617335.png)
+![image-20230705154617335](./imgs/image-20230705154617335.png)
 
 ```go
 func Run23() {
@@ -1007,7 +1007,7 @@ func Run23() {
 }
 ```
 
-![image-20230705160626573](D:\dev\php\magook\trunk\server\md\img\image-20230705160626573.png)
+![image-20230705160626573](./imgs/image-20230705160626573.png)
 
 ```go
 func Run24() {
@@ -1032,7 +1032,7 @@ func Run24() {
 }
 ```
 
-![image-20230705161924894](D:\dev\php\magook\trunk\server\md\img\image-20230705161924894.png)
+![image-20230705161924894](./imgs/image-20230705161924894.png)
 
 ##### 图像的翻转
 
@@ -1060,7 +1060,7 @@ func Run25() {
 }
 ```
 
-![image-20230705162919914](D:\dev\php\magook\trunk\server\md\img\image-20230705162919914.png)
+![image-20230705162919914](./imgs/image-20230705162919914.png)
 
 ##### 图像金字塔
 
@@ -1114,7 +1114,7 @@ func Run26() {
 }
 ```
 
-![image-20230705182646812](D:\dev\php\magook\trunk\server\md\img\image-20230705182646812.png)
+![image-20230705182646812](./imgs/image-20230705182646812.png)
 
 ##### 错切，斜切，扭变
 
@@ -1144,7 +1144,7 @@ func Run27() {
 }
 ```
 
-![image-20230706090211291](D:\dev\php\magook\trunk\server\md\img\image-20230706090211291.png)
+![image-20230706090211291](./imgs/image-20230706090211291.png)
 
 ##### 复合变换
 
@@ -1181,7 +1181,7 @@ func Run28() {
 }
 ```
 
-![image-20230706110606390](D:\dev\php\magook\trunk\server\md\img\image-20230706110606390.png)
+![image-20230706110606390](./imgs/image-20230706110606390.png)
 
 在图像变换中如果目标图像的尺寸比原图像小，实际上对多余的空白部分可以设置填充样式，这一点和OpenGL是一样的。主要修改`gocv.InterpolationFlags and gocv.BoderType`
 
@@ -1204,7 +1204,7 @@ func Run29() {
 }
 ```
 
-![image-20230706111924517](D:\dev\php\magook\trunk\server\md\img\image-20230706111924517.png)
+![image-20230706111924517](./imgs/image-20230706111924517.png)
 
 ##### 直角坐标与极坐标的转换
 
@@ -1273,7 +1273,7 @@ func Run31() {
 
 
 
-![image-20230706152658986](D:\dev\php\magook\trunk\server\md\img\image-20230706152658986.png)
+![image-20230706152658986](./imgs/image-20230706152658986.png)
 
 ##### 图像灰度变换
 
@@ -1297,7 +1297,7 @@ func Run35() {
 }
 ```
 
-![image-20230711160249837](D:\dev\php\magook\trunk\server\md\img\image-20230711160249837.png)
+![image-20230711160249837](./imgs/image-20230711160249837.png)
 
 
 
@@ -1346,7 +1346,7 @@ func Run32() {
 
 
 
-![image-20230707144202487](D:\dev\php\magook\trunk\server\md\img\image-20230707144202487.png)
+![image-20230707144202487](./imgs/image-20230707144202487.png)
 
 **灰度对数变换**
 
@@ -1443,7 +1443,7 @@ f, _ := os.Create("showimage/bar.html")
 bar.Render(f)
 ```
 
-![image-20230711171803538](D:\dev\php\magook\trunk\server\md\img\image-20230711171803538.png)
+![image-20230711171803538](./imgs/image-20230711171803538.png)
 
 
 
@@ -1461,11 +1461,11 @@ func Run34() {
 }
 ```
 
-![image-20230709152355752](D:\dev\php\magook\trunk\server\md\img\image-20230709152355752.png)
+![image-20230709152355752](./imgs/image-20230709152355752.png)
 
 再次通过上面的方法获取`dst`的直方图，的确要比原先的均衡一些啦。
 
-![image-20230711175147603](D:\dev\php\magook\trunk\server\md\img\image-20230711175147603.png)
+![image-20230711175147603](./imgs/image-20230711175147603.png)
 
 
 
@@ -1507,15 +1507,15 @@ filter2D	(
 )	
 ```
 
-| 字段       | 描述                                                         |
-| ---------- | ------------------------------------------------------------ |
-| src        | 原图像                                                       |
-| dst        | 目标图像，与原图像尺寸和通道数相同                           |
-| ddepth     | 目标图像的所需深度                                           |
-| kernel     | 卷积核（或相当于相关核），单通道浮点矩阵;如果要将不同的内核应用于不同的通道，请使用拆分将图像拆分为单独的颜色平面，然后单独处理它们。 |
+| 字段       | 描述                                                                                                                                                       |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| src        | 原图像                                                                                                                                                     |
+| dst        | 目标图像，与原图像尺寸和通道数相同                                                                                                                         |
+| ddepth     | 目标图像的所需深度                                                                                                                                         |
+| kernel     | 卷积核（或相当于相关核），单通道浮点矩阵;如果要将不同的内核应用于不同的通道，请使用拆分将图像拆分为单独的颜色平面，然后单独处理它们。                      |
 | anchor     | 内核的锚点，指示内核中过滤点的相对位置;锚应位于内核中;默认值（-1，-1）表示锚位于内核中心。锚点不同会导致盖住的区域不同，我们一般是核的中心对着目标像素点。 |
-| detal      | 在将它们存储在dst中之前，将可选值添加到已过滤的像素中。类似于偏置。 |
-| borderType | 像素外推法，不支持`borderWrap`                               |
+| detal      | 在将它们存储在dst中之前，将可选值添加到已过滤的像素中。类似于偏置。                                                                                        |
+| borderType | 像素外推法，不支持`borderWrap`                                                                                                                             |
 
 
 
@@ -1637,19 +1637,19 @@ https://blog.csdn.net/youcans/article/details/125112487
 
 减小运算量，向下采样，把得到的 feature map 进行缩小。比如将 m * n 的feature map 缩小到 u * v，其实就是图像的缩放，向下采样有两种方式，第一是取最大值，第二是取平均值，一般采样最大值这样会更大限度的保留特征。
 
-![image-20230710230227320](D:\dev\php\magook\trunk\server\md\img\image-20230710230227320.png)
+![image-20230710230227320](./imgs/image-20230710230227320.png)
 
 ##### 标准化Normalize
 
 将小于0 的置为0，大于0 的还是它本身，有点类似于二值化运算
 
-![image-20230710230907741](D:\dev\php\magook\trunk\server\md\img\image-20230710230907741.png)
+![image-20230710230907741](./imgs/image-20230710230907741.png)
 
-![image-20230710231142054](D:\dev\php\magook\trunk\server\md\img\image-20230710231142054.png)
+![image-20230710231142054](./imgs/image-20230710231142054.png)
 
 卷积+标准化+池化  这三个操作可以多次执行
 
-![image-20230710231320673](D:\dev\php\magook\trunk\server\md\img\image-20230710231320673.png)
+![image-20230710231320673](./imgs/image-20230710231320673.png)
 
 ##### 提取局部特征
 
@@ -1665,7 +1665,7 @@ https://blog.csdn.net/youcans/article/details/125112487
 
 
 
-![image-20230710225046417](D:\dev\php\magook\trunk\server\md\img\image-20230710225046417.png)
+![image-20230710225046417](./imgs/image-20230710225046417.png)
 
 
 

@@ -20,7 +20,7 @@ https://zhuanlan.zhihu.com/p/47014344
 
 
 
-![image-20230714172327100](D:\dev\php\magook\trunk\server\md\img\image-20230714172327100.png)
+![image-20230714172327100](./imgs/image-20230714172327100.png)
 
 
 

@@ -71,7 +71,7 @@ tesseract D:\dev\php\magook\trunk\server\go-opencv\detectcarband\licence_plate.j
 
 其实并不算很准，比如如下车牌
 
-![image-20230713165033900](D:\dev\php\magook\trunk\server\md\img\image-20230713165033900.png)
+![image-20230713165033900](./imgs/image-20230713165033900.png)
 
 识别结果是`外.730V7`
 
